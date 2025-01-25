@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/admin/OneDrive/JS/Lecture1",
-      "program": "c:/Users/admin/OneDrive/JS/Lecture1/build/Debug/outDebug",
+      "cwd": "c:/Users/admin/OneDrive/JS/.vscode",
+      "program": "c:/Users/admin/OneDrive/JS/.vscode/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
