@@ -5,18 +5,24 @@
     }
     console.log(stringToArray('hello'));
 
-
 // 1.2
     const array1 = [1, 2, 3];
     const randomValue = 'something';
     const array2 = [4, 5, 6];
 
+    //C1
     function mergeArrays(arr1, value, arr2) {
         return [ ...arr1, value, ...arr2];
     }
 
     console.log(mergeArrays(array1, randomValue, array2));
 
+    //C2
+    function mergeArrays2(arr1, value, arr2)
+    {
+        return arr1.concat(value , arr2);
+    }
+    console.log(mergeArrays2(array1, randomValue, array2));
 // 1.3
     function sumOfAllNumbers(...arr)
     {
@@ -27,7 +33,15 @@
     }
     console.log(sumOfAllNumbers(...mergeArrays(array1, randomValue, array2)));
 
+// Tạo một mảng để lưu các số có trong mảng đã được merge
+    const numbersInArray = [];
+    
+        for(const n of mergeArrays(array1, randomValue, array2))
+        {
+            if(typeof n === 'number') numbersInArray.push(n);
+        }
 // 1.4
+    //C1
     function sumExpectFirst(...arr)
     {
         let checkSkipped = false;
@@ -47,6 +61,12 @@
     }
     console.log(sumExpectFirst(...mergeArrays(array1, randomValue, array2)));
 
+    //C2
+    function sumExpectFirst2(arr)
+    {
+      return numbersInArray.slice(1).reduce((sum,num) => sum + num, 0);
+    }
+    console.log(sumExpectFirst2(mergeArrays2(array1, randomValue, array2)));
 // 1.5 
     function sumExpectLast(...arr)
     {
@@ -67,6 +87,13 @@
         },0 );
     }
     console.log(sumExpectLast(...mergeArrays(array1, randomValue, array2)));
+
+    //C2
+    function sumExpectLast2(arr)
+    {
+      return numbersInArray.slice(0, -1).reduce((sum,num) => sum + num, 0);
+    }
+    console.log(sumExpectLast2(mergeArrays2(array1, randomValue, array2)));
 
 // 1.6 
     function sumOfThreeFirstNumbers(...arr)
